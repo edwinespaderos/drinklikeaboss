@@ -1,0 +1,851 @@
+// bower:scss
+@import "../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "../bower_components/neat/app/assets/stylesheets/_neat.scss";
+
+// endbower
+
+
+// boss var colors
+
+$boss-matteblack: #2b2323;
+$boss-white: #f0fcf8;
+$boss-black: #0e0a19;
+$boss-green: #03aa00;
+$boss-purple: #481f8c;
+$boss-red: #e92000;
+$boss-yellow: #fdf74b;
+$boss-blue: #136f98;
+$boss-offsetgray: #f1f1f1;
+$boss-bodycolor: #fafafa;
+
+
+body {
+    background: #fafafa;
+    font-family: "futura-pt", Helvetica, Arial, sans-serif;
+    color: $boss-matteblack;
+    margin: 0;
+    padding: 0;
+}
+
+
+// outter container, usuing bourbon neat grid system.
+
+
+.container {
+  @include outer-container;
+}
+// //////////////////////// Age verefier starts here vvvvvvvv
+
+#age-verefier {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: $boss-matteblack;
+  z-index: 30000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: $boss-white;
+  text-align: center;
+
+  .age-verefier-contents{
+    overflow: scroll;
+    height: 100%;
+  }
+}
+
+.age-verefier-hide {
+  display: none;
+}
+
+.btn-wrap {
+  @include span-columns(8);
+  @include shift(2);
+}
+
+.age-btn {
+  @include span-columns(8 of 8);
+  margin-bottom: 20px;
+  height: 80px;
+  background: $boss-matteblack;
+  border: 3px solid $boss-white;
+  cursor: pointer;
+  p{
+    margin: 0;
+    line-height: 80px;
+
+  }
+  @include transition(all .3s ease-in-out);
+  &:hover{
+    background: $boss-white;
+    color: $boss-matteblack;
+  }
+  @include media(700px) {
+    @include span-columns(4 of 8);
+    // @include omega();
+    // @include shift(1);
+
+  }
+  a {
+    text-decoration: none;
+    color: $boss-white;
+    @include transition(all .3s ease-in-out);
+    &:hover {
+      color: $boss-matteblack
+    }
+  }
+}
+
+.age-logo {
+  @include span-columns(8);
+  @include shift(2);
+  img {
+    @include fill-parent;
+    // width: 60%;
+    // margin-left: -13%;
+  }
+}
+
+.age-text {
+  @include span-columns(8);
+  @include shift(2);
+  color: $boss-yellow;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+
+.page {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+
+// ///////////////////////// header starts here vvvvvvvvvv
+
+#header {
+  background: #fdf74b;
+  height: 75vh;
+  min-height: 450px;
+  max-height: 375px;
+  width: 100%;
+  border: 30px solid white;
+  position: relative;
+  @include media(500px) {
+    max-height: 500px;
+  }
+  @include media(575px) {
+    max-height: 590px;
+  }
+  .header-contents {
+    padding: 50px 0px;
+    // outline: 1px solid blue;
+  }
+}
+
+
+.hero-text {
+  @include span-columns(10);
+  @include shift(1);
+  text-transform: uppercase;
+  text-align: center;
+  color: #136f98;
+  font-weight: 400;
+  margin-top: -25px;
+  h1 {
+    font-size: 1.8em;
+    font-weight: 800;
+    line-height: 23px;
+    margin: 0;
+  }
+
+  h3 {
+    font-style: italic;
+    margin: 6px 0;
+    font-size: 10px;
+  }
+
+  p {
+    margin: 2px, 0, 2px, 0;
+    letter-spacing: 6px;
+    font-size: 8px;
+  }
+
+  @include media(500px) {
+    h1 {
+      font-size: 2em;
+      font-weight: 800;
+      line-height: 43px;
+      margin: 0;
+    }
+    p {
+      font-size: .5em;
+    }
+  }
+
+  @include media(575px) {
+    h1 {
+      font-size: 4em;
+      line-height: 67px;
+    }
+    h3 {font-size: 1em;}
+  }
+
+  @include media(900px) {
+    @include span-columns(6);
+    @include shift(5);
+    text-align: left;
+    padding-left: 50px;
+    margin-top: 150px;
+
+    h1 {
+      font-size: 4em;
+      line-height: 55px;
+    }
+  }
+
+  @include media(1000px) {
+    @include shift(5);
+    padding-left: 0;
+  }
+
+}
+
+
+.hero-img {
+  @include span-columns(8);
+  @include shift(2);
+  position: absolute;
+  bottom: -70px;
+  img {
+    @include fill-parent;
+    max-width: 170px;
+    margin-left: 10px;
+  }
+
+  @include media(375px) {
+    img {max-width: 235px;}
+  }
+
+  @include media(500px) {
+    img {max-width: 260px;}
+  }
+
+  @include media(900px) {
+    @include shift(1);
+    img {max-width: 400px; margin-left: -7%;}
+
+  }
+
+}
+
+// /////////////////////// header ends here ^^^^^^^^^^^^^
+
+// ////////////////////// about starts here VVVVVVVVVVVVVV
+
+#about {
+  background: #2b2323;
+  padding: 100px 0;
+}
+
+
+.about-contents {
+
+  .about-text {
+    @include span-columns(10);
+    @include shift(1);
+    text-align: center;
+    color: #fdf74b;
+  }
+  h1 {
+    font-size: 2.4em;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+  p {
+    font-size: 1.3em;
+  }
+  @include media(900px) {
+    @include span-columns(10);
+    @include shift(1);
+    padding-bottom: 0;
+
+  }
+
+
+}
+
+// /////////////////////// about ende here ^^^^^^^^^^^^^^
+
+// ////////////////////// how to be starts here VVVVVVVVVV
+
+// .howto {
+//   opacity: 0;
+//   @include transition(all .3s ease-in-out);
+// }
+//
+// .howto-show {
+//   opacity: 100;
+// }
+
+
+.how-tobe-contents {
+  padding-top: 50px;
+}
+
+.headline {
+  @include span-columns(10);
+  @include shift(1);
+  margin-bottom: 40px;
+  h1{
+    font-size: 2.4em;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+  p{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+}
+
+.card {
+  @include span-columns(10);
+  @include shift(1);
+  height: 400px;
+  background: $boss-offsetgray;
+  margin-bottom: 50px;
+  text-align: center;
+  @include media(900px) {
+    @include span-columns(4);
+    margin-left: 0;
+  }
+}
+
+.card-text {
+  @include span-columns(7 of 9);
+  @include shift(1);
+  h1 {
+    font-size: 2.5em;
+  }
+  p {
+    font-size: 2em;
+  }
+}
+
+// /////////////////////// ^^^^^^^^^^ how to be ends here
+
+// /////////////////////// vvvvvvvvvvv flavor section starts here
+
+
+#flavors {
+  padding: 50px 0;
+  background: darken($boss-bodycolor, 1%);
+}
+
+.flav-wrap {
+  @include media(800px) {
+    padding-left: 12.55%;
+  }
+}
+
+.flavor-dis {
+  @include span-columns(10);
+  @include shift(1);
+  margin-bottom: 20px;
+  min-height: 715px;
+  padding-top: 20px;
+  @include media(500px) {
+    @include span-columns(8);
+    @include shift(2);
+
+  }
+
+  @include media(800px) {
+    margin-right: 0;
+    @include span-columns(4);
+    @include shift(1);
+    @include omega(2n);
+
+  }
+
+  .flav-headline {
+    @include span-columns(10);
+    @include shift(1);
+    text-align: center;
+    // outline: 1px solid $boss-matteblack;
+    h1 {
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 0;
+    }
+    p {
+      margin-top: 5px;
+    }
+    .sub-head {
+      color: lighten($boss-matteblack, 30%);
+    }
+
+  }
+
+  .flav-img {
+    @include span-columns(10);
+    @include shift(1);
+    img {
+      @include fill-parent;
+      width: 75%;
+      margin-left: 13%;
+      @include transition(all .2s ease-in-out);
+
+      &:hover {
+        width: 78%;
+        margin-left: 11%;
+        @include transform(rotate(3deg));
+      }
+    }
+  }
+}
+
+.fruitpunch, .grape,
+.watermelon , .berry { margin-right: -50px; background: $boss-offsetgray;}
+
+
+// ////////////////////////////////////////////////////// NAV
+
+
+
+
+
+
+.open-icon {
+  width: 107px;
+  height: 50px;
+  padding: 12px 0 0 7px;
+  background: #f0fcf8;
+  background: $boss-black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1000;
+  // opacity: 0.9;
+  p {
+    margin-left: 44px;
+    margin-top: 3px;
+    // font-weight: 900;
+    color: $boss-white;
+    cursor: pointer;
+    @include transition(all .3s ease-in-out);
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+.nav-items {
+  margin-top: -40px;
+}
+
+.close-ex {
+  position: relative;
+  left: 219px;
+  top: -23px;
+  background: $boss-yellow;
+  color: #0e0a19;
+  padding: 0px 23px;
+  height: 41px;
+  width: 66px;
+  font-size: 28px;
+  margin-bottom: 0;
+  cursor: pointer;
+  @include transition(all .2s ease-in-out);
+  &:hover{
+    background: darken($boss-yellow, 10%);
+
+  }
+}
+
+#nav-toggle {
+  position: absolute;
+  // left: 50%;
+  // top: 50%;
+}
+
+#nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; }
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 3px;
+  width: 35px;
+  background: $boss-white;
+  position: absolute;
+  display: block;
+  content: '';
+
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+
+#nav-toggle {
+  // background: $boss-white;
+  @include transition(all .3s ease-in-out);
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+
+#nav-mobile {
+  background: $boss-black;
+  left: -285px;  /* start off behind the scenes */
+  height: 100%;
+  position: fixed;
+  width: 285px;
+  top: 0;
+  bottom: 0;
+  color: $boss-white;
+  z-index: 9000;
+  a {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: $boss-white;
+    text-decoration: none;
+    line-height: 40px;
+    padding-right: 4px;
+    @include transition(all .2s ease-in-out);
+    &:hover{
+      color: $boss-yellow;
+    }
+  }
+  li {
+    list-style: none;
+    font-size: 0.8em;
+    color: #B1B9B7;
+
+
+  }
+  .social {
+    text-decoration: none;
+    margin-left: -44px;
+    margin-top: 7px;
+    span{
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    li {
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+  img {
+    margin-top: 10px;
+    width: 30px;
+    @include transition(all .2s ease-in-out);
+    &:hover{
+      opacity: 0.5;
+    }
+
+  }
+  .line {
+    width: 100%;
+    height: 1px;
+    background-color: $boss-white;
+    margin-top: 30px;
+  }
+}
+
+.nav-legal {
+  margin-top: 22px;
+  color: $boss-yellow;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 0.7em;
+  margin-left: -35px;
+}
+
+.nav-legal-list {
+  color: #B1B9B7;
+  font-size: 0.7em;
+  letter-spacing: 2px;
+  margin-top: -12px;
+  margin-left: 8px;
+
+  li {
+    display: inline-block;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+}
+
+// work around for copy right info at the bottom of nav.
+
+.go-left {
+  margin-left: -20px;
+}
+.first-left {
+  margin-left: -5px;
+}
+
+// ///////////////^^^^^^^^^ end of nav-legal-list
+
+// ///////////////vvvvvvvvvvv begining of form styles
+
+
+#contact {
+  background: $boss-matteblack;
+  color: lighten($boss-white, 5%);
+  padding: 50px 0;
+  margin-bottom: 0;
+  .contact-content {
+    h1, h2, p {
+      // text-align: center;
+    }
+
+  }
+
+  legend {
+    text-align: center;
+  }
+
+}
+
+.form-group {
+  @include span-columns(10);
+  @include shift(1);
+  margin-bottom: 20px;
+  @include media(925px) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+}
+
+
+
+input{
+  width: 100%;
+  height: 32px;
+  background: darken($boss-matteblack, 2%);
+  border-bottom: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #fff;
+  padding-left: 5px;
+  margin-top: 5px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+
+
+}
+
+input:focus {
+
+    outline: none;
+
+}
+
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  width: 100%;
+  background: none;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid #fff;
+  margin-top: 5px;
+  background: darken($boss-matteblack, 2%);
+  padding-left: 5px;
+  color: #fff;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+
+}
+
+fieldset {
+  border: none;
+}
+
+.form-one {
+  margin-top: 50px;
+}
+
+
+.btn {
+  width: 100%;
+  padding: 20px;
+  background: $boss-matteblack;
+  border: 3px solid $boss-white;
+  font-family: "futura-pt", Helvetica, Arial, sans-serif;
+  color: $boss-white;
+  font-size: 0.9em;
+  cursor: pointer;
+  @include transition(all .2s ease-in-out);
+  &:hover{
+    background: $boss-white;
+    color: $boss-matteblack;
+
+  }
+  @include media(925px) {
+    width: inherit;
+
+  }
+
+}
+
+
+// ///////////////////// terms, privacy, and faqs styles vvvv
+
+
+#legal-header {
+  width: 100%;
+  height: 200px;
+  background: $boss-yellow;
+  border: 15px solid white;
+
+  .legal-header-text {
+    @include span-columns(8);
+    @include shift(2);
+    text-align: center;
+    color: $boss-blue;
+    margin-top: 50px;
+    h1 {
+      font-size: 2em;
+      font-weight: 800;
+      margin: 0;
+    }
+  }
+}
+#terms {
+  padding-top: 50px;
+  margin: 0;
+  h1{
+    margin-top: 0;
+  }
+  .terms {
+    @include span-columns(8);
+    @include shift(2);
+    margin-bottom: 300px;
+  }
+}
+
+
+.totop {
+  width: 40px;
+  height: 40px;
+  background: $boss-offsetgray;
+  position: fixed;
+  bottom: 98px;
+  margin-left: 7px;
+  text-align: center;
+  opacity: .9;
+  cursor: pointer;
+  display: none;
+  .totop-text {
+    margin: 0;
+    p{
+      margin:0;
+      color: #d6d6d6;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+  .arrow-up{
+      margin-bottom: -10px;
+      margin-top: 5px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #d6d6d6;
+  }
+
+}
+
+.totop-show {
+  display: block;
+}
+
+#footer {
+  height: 90px;
+  width: 100%;
+  background: $boss-matteblack;
+  position: fixed;
+  bottom: 0;
+
+  .footer-contents {
+    @include span-columns(8);
+    @include shift(2);
+
+    text-align: center;
+    ul {
+      list-style: none;
+      color: white;
+      margin-left: -10%;
+      margin-top: 15px;
+      li {
+        display: inline;
+        &:first-child {
+          color: $boss-yellow;
+        }
+        a {
+          color: lighten($boss-white, 20%);
+          text-decoration: none;
+          padding-right: 5px;
+          color: #737373;
+          padding-top: 5px;
+          @include transition(all .2s ease-in-out);
+
+          &:hover{
+            opacity: 0.5;
+
+          }
+        }
+      }
+    }
+    span{
+      color: #737373;
+
+    }
+  }
+}
+
+
+// ///////////////////// slide up animation
+
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 0.6s; /* So they look staggered */
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+
+
+.come-down {
+  transform: translateY(-350px);
+  animation: come-in 0.8s ease forwards;
+}
+
+@keyframes come-down {
+  to { transform: translateX(0); }
+}
