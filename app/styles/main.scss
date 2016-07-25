@@ -95,6 +95,11 @@ body {
       color: $boss-matteblack
     }
   }
+
+  .under:hover {
+    background: $boss-red;
+
+  }
 }
 
 .age-logo {
@@ -218,7 +223,7 @@ body {
 
 .hero-img {
   @include span-columns(8);
-  @include shift(2);
+  @include shift(1);
   position: absolute;
   bottom: -70px;
   img {
