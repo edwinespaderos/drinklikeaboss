@@ -1,7 +1,6 @@
 // bower:scss
 @import "../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
 @import "../bower_components/neat/app/assets/stylesheets/_neat.scss";
-
 // endbower
 
 
@@ -725,7 +724,7 @@ fieldset {
   color: $boss-matteblack;
   padding-bottom: 100px;
 
-  #finder-input {
+  #zip-field {
     height: 56px;
     background: $boss-bodycolor;
     color: $boss-black;
@@ -738,6 +737,7 @@ fieldset {
     color: $boss-matteblack;
     background: $boss-bodycolor;
     border: 3px solid $boss-matteblack;
+    margin-top: 20px;
     &:hover{
       background: $boss-matteblack;
       color: $boss-bodycolor;
@@ -768,10 +768,10 @@ fieldset {
 .location-box {
   background: $boss-offsetgray;
   display: inline-block;
-  height: 150px;
+  height: 200px;
   margin-bottom: 20px;
   text-align: center;
-  padding: 0 5px;
+  padding: 0 10px;
   width: 100%;
   @include media(925px) {
     @include span-columns(4);

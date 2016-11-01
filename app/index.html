@@ -16,7 +16,6 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
-
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -329,65 +328,20 @@
               </p>
             </div>
 
-            <div class="form-group">
-              <div class="">
-                <input id="finder-input" type="text" placeholder="zip code" value="">
-              </div>
-            </div>
+            <form id="search-form" class="form-group">
 
-            <div class="form-group">
-              <label class="control-label" for="submit"></label>
-              <div class="submit-btn">
-                <button id="submit" name="submit"  placeholder="Enter your email address here" class="btn btn-primary">Find</button>
-              </div>
-            </div>
-
-            <div class="finder-contents">
-
-              <div class="location-box">
-                <div class="flav-headline">
-                  <h1>store name</h1>
-                  <p class="sub-head">SouthPark, 4400 Sharon Road, Charlotte, NC 28211</p>
-                  <a href="#"><p class="sub-head">link to map</p></a>
-                </div>
-              </div>
-
-              <div class="location-box">
-                <div class="flav-headline">
-                  <h1>store name</h1>
-                  <p class="sub-head">store address</p>
-                  <a href="#"><p class="sub-head">link to map</p></a>
-                </div>
-              </div>
-
-              <div class="location-box">
-                <div class="flav-headline">
-                  <h1>store name</h1>
-                  <p class="sub-head">store address</p>
-                  <a href="#"><p class="sub-head">link to map</p></a>
-                </div>
-              </div>
-
-              <div class="location-box">
-                <div class="flav-headline">
-                  <h1>store name</h1>
-                  <p class="sub-head">store address</p>
-                  <a href="#"><p class="sub-head">link to map</p></a>
-                </div>
-              </div>
-
-              <div class="location-box">
-                <div class="flav-headline">
-                  <h1>store name</h1>
-                  <p class="sub-head">store address</p>
-                  <a href="#"><p class="sub-head">link to map</p></a>
-                </div>
-              </div>
+                <input id="zip-field" type="text" placeholder="Enter your zip code" >
 
 
+                  <div class="submit-btn">
+                    <button id="submit" name="submit" class="btn btn-primary">Find</button>
+                  </div>
+
+            </form>
 
 
-            </div>
+            <div id="finder-box" class="finder-contents"></div>
+
         </div>
       </section>
 
@@ -417,7 +371,8 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
-
+        <script src="bower_components/fetch/fetch.js"></script>
+        <script src="bower_components/es6-promise/es6-promise.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
